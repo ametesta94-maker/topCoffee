@@ -542,6 +542,68 @@
     .gallery-grid .g:first-child{grid-column:auto;height:220px}
     .gallery-grid{height:auto}
     .nav-logo .brand{display:none}
+
+    /* ===== TABELLA COMPARATIVA MOBILE ===== */
+    .table-wrap{padding:4px;border-radius:16px}
+    .compare-table{display:block}
+    .compare-table thead{display:none}
+    .compare-table tbody{display:flex;flex-direction:column;gap:10px;padding:4px}
+    .compare-table tbody tr{
+      display:grid;
+      grid-template-columns:1fr 1fr 1fr;
+      grid-template-rows:auto auto;
+      border-radius:12px;
+      overflow:hidden;
+      border:1px solid var(--cream-300);
+      background:#fff;
+    }
+    /* Feature label — full width header */
+    .compare-table tbody tr td:first-child{
+      grid-column:1 / -1;
+      text-align:center;
+      background:var(--coffee-800);
+      color:var(--cream-100);
+      padding:9px 12px;
+      font-size:10px;
+      letter-spacing:1.2px;
+      border-top:none;
+    }
+    /* Brand value cells */
+    .compare-table tbody td:not(:first-child){
+      padding:12px 6px 10px;
+      text-align:center;
+      font-size:12px;
+      border-top:none;
+    }
+    /* Brand label via data-brand */
+    .compare-table tbody td[data-brand]::before{
+      content:attr(data-brand);
+      display:block;
+      font-size:9px;
+      font-weight:700;
+      letter-spacing:.5px;
+      text-transform:uppercase;
+      opacity:.55;
+      margin-bottom:4px;
+      color:var(--coffee-700);
+    }
+    /* TopCoffy column highlight */
+    .compare-table tbody td.col-topcoffy{
+      border-left:none;
+      border-right:none;
+      border-top:none;
+      border-bottom:2px solid var(--gold);
+      background:rgba(201,169,97,.14);
+    }
+    .compare-table tbody td[data-brand="TopCoffy"]::before{
+      color:var(--gold-dark);
+      opacity:1;
+    }
+    .compare-table tbody tr:last-child td.col-topcoffy{
+      border-radius:0;
+      border-bottom:2px solid var(--gold);
+    }
+    .compare-foot{font-size:12px}
   }
 
   /* small fadeIn */
@@ -731,63 +793,63 @@
         <tbody>
           <tr>
             <td>Costo macchinetta</td>
-            <td><span class="v-no">129,00 €</span></td>
-            <td><span class="v-yes">Gratis</span></td>
-            <td class="col-topcoffy"><span class="v-yes">Gratis</span></td>
+            <td data-brand="Nespresso"><span class="v-no">129,00 €</span></td>
+            <td data-brand="Lavazza"><span class="v-yes">Gratis</span></td>
+            <td class="col-topcoffy" data-brand="TopCoffy"><span class="v-yes">Gratis</span></td>
           </tr>
           <tr>
             <td>Costo a caffè</td>
-            <td><span class="v-no">40 / 50 cent.</span></td>
-            <td><span class="v-yes">30 / 40 cent.</span></td>
-            <td class="col-topcoffy"><span class="v-yes">30 / 40 cent.</span></td>
+            <td data-brand="Nespresso"><span class="v-no">40/50 cent.</span></td>
+            <td data-brand="Lavazza"><span class="v-yes">30/40 cent.</span></td>
+            <td class="col-topcoffy" data-brand="TopCoffy"><span class="v-yes">30/40 cent.</span></td>
           </tr>
           <tr>
             <td>Grammi caffè</td>
-            <td><span class="v-no">5 g</span></td>
-            <td><span class="v-warn">7 g</span></td>
-            <td class="col-topcoffy"><span class="v-yes">8 g</span></td>
+            <td data-brand="Nespresso"><span class="v-no">5 g</span></td>
+            <td data-brand="Lavazza"><span class="v-warn">7 g</span></td>
+            <td class="col-topcoffy" data-brand="TopCoffy"><span class="v-yes">8 g</span></td>
           </tr>
           <tr>
             <td>Termoformatura</td>
-            <td><span class="v-yes">Sì</span></td>
-            <td><span class="v-no">No</span></td>
-            <td class="col-topcoffy"><span class="v-yes">Sì</span></td>
+            <td data-brand="Nespresso"><span class="v-yes">Sì</span></td>
+            <td data-brand="Lavazza"><span class="v-no">No</span></td>
+            <td class="col-topcoffy" data-brand="TopCoffy"><span class="v-yes">Sì</span></td>
           </tr>
           <tr>
             <td>Garanzia</td>
-            <td><span class="v-no">2 anni</span></td>
-            <td><span class="v-yes">Illimitata</span></td>
-            <td class="col-topcoffy"><span class="v-yes">Illimitata</span></td>
+            <td data-brand="Nespresso"><span class="v-no">2 anni</span></td>
+            <td data-brand="Lavazza"><span class="v-yes">Illimitata</span></td>
+            <td class="col-topcoffy" data-brand="TopCoffy"><span class="v-yes">Illimitata</span></td>
           </tr>
           <tr>
             <td>Servizio assistenza</td>
-            <td><span class="v-no">No</span></td>
-            <td><span class="v-no">A pagamento</span></td>
-            <td class="col-topcoffy"><span class="v-yes">Gratis</span></td>
+            <td data-brand="Nespresso"><span class="v-no">No</span></td>
+            <td data-brand="Lavazza"><span class="v-no">A pagamento</span></td>
+            <td class="col-topcoffy" data-brand="TopCoffy"><span class="v-yes">Gratis</span></td>
           </tr>
           <tr>
             <td>Approvvigionamento</td>
-            <td><span class="v-no">No domicilio</span></td>
-            <td><span class="v-warn">Domicilio + spese</span></td>
-            <td class="col-topcoffy"><span class="v-yes">Domicilio gratis</span></td>
+            <td data-brand="Nespresso"><span class="v-no">No domicilio</span></td>
+            <td data-brand="Lavazza"><span class="v-warn">+spese</span></td>
+            <td class="col-topcoffy" data-brand="TopCoffy"><span class="v-yes">Domicilio gratis</span></td>
           </tr>
           <tr>
-            <td>Obbligo di acquisti</td>
-            <td><span class="v-yes">No</span></td>
-            <td><span class="v-no">500 / 2.000 €</span></td>
-            <td class="col-topcoffy"><span class="v-yes">No</span></td>
+            <td>Obbligo acquisti</td>
+            <td data-brand="Nespresso"><span class="v-yes">No</span></td>
+            <td data-brand="Lavazza"><span class="v-no">500-2000 €</span></td>
+            <td class="col-topcoffy" data-brand="TopCoffy"><span class="v-yes">No</span></td>
           </tr>
           <tr>
             <td>Decalcificazione</td>
-            <td><span class="v-no">No</span></td>
-            <td><span class="v-no">No</span></td>
-            <td class="col-topcoffy"><span class="v-yes">Gratis</span></td>
+            <td data-brand="Nespresso"><span class="v-no">No</span></td>
+            <td data-brand="Lavazza"><span class="v-no">No</span></td>
+            <td class="col-topcoffy" data-brand="TopCoffy"><span class="v-yes">Gratis</span></td>
           </tr>
           <tr>
             <td>Regalo</td>
-            <td><span class="v-no">No</span></td>
-            <td><span class="v-no">No</span></td>
-            <td class="col-topcoffy"><span class="v-yes">Buono 1.000 €</span></td>
+            <td data-brand="Nespresso"><span class="v-no">No</span></td>
+            <td data-brand="Lavazza"><span class="v-no">No</span></td>
+            <td class="col-topcoffy" data-brand="TopCoffy"><span class="v-yes">Buono 1.000 €</span></td>
           </tr>
         </tbody>
       </table>
