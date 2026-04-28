@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>TopCoffy — Caffè Artigianale Made in Italy + Macchinetta in Regalo</title>
+<meta name="description" content="Caffè artigianale italiano in capsule da 8g. Macchinetta in regalo, garanzia illimitata, consegne gratuite a domicilio. Nessun vincolo." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --coffee-900:#2a1810;
+    --coffee-800:#3d2317;
+    --coffee-700:#5b3a25;
+    --coffee-600:#7a4f33;
+    --coffee-500:#a06a44;
+    --cream-100:#faf5ec;
+    --cream-200:#f3e9d7;
+    --cream-300:#e8d6b8;
+    --gold:#c9a961;
+    --gold-dark:#a88a47;
+    --red:#c0392b;
+    --red-dark:#962d22;
+    --green:#1f8a4c;
+    --green-light:#2eb265;
+    --shadow-sm:0 2px 8px rgba(42,24,16,.08);
+    --shadow-md:0 8px 24px rgba(42,24,16,.12);
+    --shadow-lg:0 20px 60px rgba(42,24,16,.18);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Inter',system-ui,-apple-system,sans-serif;
+    color:var(--coffee-900);
+    background:var(--cream-100);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{font-family:'Playfair Display',Georgia,serif;line-height:1.15;color:var(--coffee-900)}
+  .container{max-width:1180px;margin:0 auto;padding:0 24px}
+  img{max-width:100%;display:block}
+
+  /* ===== TOP BAR ===== */
+  .topbar{
+    background:var(--coffee-900);
+    color:var(--cream-200);
+    font-size:14px;
+    padding:10px 0;
+    text-align:center;
+    letter-spacing:.5px;
+  }
+  .topbar strong{color:var(--gold)}
+
+  /* ===== NAV ===== */
+  .nav{
+    background:var(--cream-100);
+    border-bottom:1px solid var(--cream-300);
+    padding:14px 0;
+    position:sticky;top:0;z-index:50;
+    backdrop-filter:blur(8px);
+  }
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:16px}
+  .nav-logo{display:flex;align-items:center;gap:12px}
+  .nav-logo img{width:54px;height:54px;border-radius:50%;object-fit:cover}
+  .nav-logo .brand{font-family:'Playfair Display',serif;font-weight:900;font-size:22px;color:var(--coffee-800);letter-spacing:.5px}
+  .nav-cta{
+    background:var(--green);
+    color:#fff;
+    padding:11px 20px;
+    border-radius:999px;
+    font-weight:700;
+    text-decoration:none;
+    font-size:14px;
+    display:inline-flex;align-items:center;gap:8px;
+    transition:transform .2s, box-shadow .2s, background .2s;
+    box-shadow:var(--shadow-sm);
+  }
+  .nav-cta:hover{background:var(--green-light);transform:translateY(-1px);box-shadow:var(--shadow-md)}
+  .nav-cta svg{width:18px;height:18px;fill:#fff}
+
+  /* ===== HERO ===== */
+  .hero{
+    position:relative;
+    background:
+      radial-gradient(ellipse at top right, rgba(201,169,97,.18), transparent 60%),
+      linear-gradient(135deg,#2a1810 0%, #3d2317 55%, #5b3a25 100%);
+    color:var(--cream-100);
+    overflow:hidden;
+    padding:80px 0 100px;
+  }
+  .hero::before{
+    content:"";
+    position:absolute;inset:0;
+    background-image:radial-gradient(circle at 20% 30%, rgba(201,169,97,.08) 0, transparent 40%),
+                     radial-gradient(circle at 80% 70%, rgba(201,169,97,.06) 0, transparent 40%);
+    pointer-events:none;
+  }
+  .hero-grid{
+    display:grid;
+    grid-template-columns:1.05fr .95fr;
+    gap:56px;
+    align-items:center;
+    position:relative;
+  }
+  .hero-badge{
+    display:inline-flex;align-items:center;gap:8px;
+    background:rgba(201,169,97,.15);
+    border:1px solid rgba(201,169,97,.4);
+    color:var(--gold);
+    padding:8px 16px;
+    border-radius:999px;
+    font-size:13px;
+    font-weight:600;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    margin-bottom:24px;
+  }
+  .hero h1{
+    color:#fff;
+    font-size:clamp(36px,5vw,60px);
+    font-weight:900;
+    margin-bottom:20px;
+  }
+  .hero h1 em{
+    font-style:normal;
+    color:var(--gold);
+    position:relative;
+    display:inline-block;
+  }
+  .hero p.lead{
+    font-size:19px;
+    color:var(--cream-200);
+    margin-bottom:32px;
+    max-width:560px;
+  }
+  .hero-pills{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:36px}
+  .hero-pill{
+    background:rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.15);
+    padding:8px 14px;
+    border-radius:999px;
+    font-size:13.5px;
+    font-weight:500;
+    color:var(--cream-100);
+    backdrop-filter:blur(4px);
+  }
+  .hero-pill::before{content:"✓ ";color:var(--gold);font-weight:700}
+  .hero-cta-row{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+  .btn-primary{
+    background:linear-gradient(135deg,#25d366,#1da851);
+    color:#fff;
+    padding:18px 32px;
+    border-radius:999px;
+    font-weight:700;
+    font-size:16px;
+    text-decoration:none;
+    display:inline-flex;align-items:center;gap:10px;
+    box-shadow:0 10px 30px rgba(37,211,102,.35);
+    transition:transform .2s, box-shadow .2s;
+    border:none;cursor:pointer;
+  }
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 14px 36px rgba(37,211,102,.45)}
+  .btn-primary svg{width:22px;height:22px;fill:#fff}
+  .btn-ghost{
+    color:var(--cream-200);
+    text-decoration:none;
+    font-weight:600;
+    padding:18px 8px;
+    border-bottom:1px solid transparent;
+    transition:border-color .2s;
+  }
+  .btn-ghost:hover{border-color:var(--gold)}
+
+  .hero-image{
+    position:relative;
+    text-align:center;
+  }
+  .hero-image img{
+    width:100%;
+    max-width:520px;
+    margin:0 auto;
+    border-radius:24px;
+    box-shadow:var(--shadow-lg);
+  }
+  .hero-image .float-badge{
+    position:absolute;
+    background:#fff;
+    color:var(--coffee-900);
+    padding:14px 18px;
+    border-radius:16px;
+    font-weight:700;
+    box-shadow:var(--shadow-md);
+    display:flex;align-items:center;gap:10px;
+    font-size:14px;
+  }
+  .hero-image .float-badge .num{font-size:24px;color:var(--red);font-family:'Playfair Display',serif}
+  .float-badge.fb1{top:8%;left:-4%}
+  .float-badge.fb2{bottom:10%;right:-2%}
+
+  /* ===== URGENCY STRIP ===== */
+  .urgency{
+    background:var(--red);
+    color:#fff;
+    text-align:center;
+    padding:18px 16px;
+    font-weight:700;
+    font-size:16px;
+    letter-spacing:.3px;
+  }
+  .urgency .num{
+    background:#fff;color:var(--red);
+    padding:2px 12px;border-radius:6px;
+    font-family:'Playfair Display',serif;
+    font-size:20px;
+    margin:0 4px;
+  }
+
+  /* ===== SECTION BASE ===== */
+  section{padding:90px 0}
+  .section-title{
+    text-align:center;
+    margin-bottom:14px;
+  }
+  .section-title h2{
+    font-size:clamp(30px,4vw,46px);
+    margin-bottom:14px;
+  }
+  .section-title .eyebrow{
+    color:var(--gold-dark);
+    font-weight:700;
+    font-size:13px;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    margin-bottom:14px;
+  }
+  .section-title p{
+    color:var(--coffee-700);
+    font-size:18px;
+    max-width:680px;
+    margin:0 auto 50px;
+  }
+
+  /* ===== BENEFITS GRID ===== */
+  .benefits{background:var(--cream-100)}
+  .benefits-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
+  }
+  .benefit{
+    background:#fff;
+    border:1px solid var(--cream-300);
+    border-radius:18px;
+    padding:32px 28px;
+    transition:transform .25s, box-shadow .25s, border-color .25s;
+  }
+  .benefit:hover{transform:translateY(-4px);box-shadow:var(--shadow-md);border-color:var(--gold)}
+  .benefit .icon{
+    width:56px;height:56px;
+    border-radius:14px;
+    background:linear-gradient(135deg,var(--coffee-700),var(--coffee-900));
+    display:flex;align-items:center;justify-content:center;
+    color:var(--gold);
+    margin-bottom:18px;
+  }
+  .benefit .icon svg{width:28px;height:28px}
+  .benefit h3{font-size:20px;margin-bottom:8px;color:var(--coffee-800)}
+  .benefit p{color:var(--coffee-700);font-size:15px}
+
+  /* ===== MACCHINETTA SECTION ===== */
+  .gift{
+    background:linear-gradient(135deg,var(--cream-200) 0%,var(--cream-100) 100%);
+    position:relative;
+    overflow:hidden;
+  }
+  .gift-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:60px;
+    align-items:center;
+  }
+  .gift-image{position:relative}
+  .gift-image img{border-radius:24px;box-shadow:var(--shadow-lg)}
+  .gift-image .price-tag{
+    position:absolute;
+    top:20px;right:20px;
+    background:var(--red);
+    color:#fff;
+    width:130px;height:130px;
+    border-radius:50%;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    text-align:center;
+    box-shadow:var(--shadow-md);
+    transform:rotate(-12deg);
+  }
+  .price-tag .strike{text-decoration:line-through;font-size:13px;opacity:.85}
+  .price-tag .free{font-family:'Playfair Display',serif;font-size:28px;font-weight:900;line-height:1}
+  .price-tag .sub{font-size:11px;letter-spacing:1px;margin-top:4px}
+  .gift-content .eyebrow{
+    color:var(--gold-dark);
+    font-weight:700;
+    font-size:13px;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    margin-bottom:14px;
+  }
+  .gift-content h2{font-size:clamp(30px,4vw,44px);margin-bottom:18px}
+  .gift-content p{font-size:17px;color:var(--coffee-700);margin-bottom:24px}
+  .gift-list{list-style:none;margin-bottom:32px}
+  .gift-list li{
+    display:flex;align-items:flex-start;gap:12px;
+    padding:10px 0;
+    font-size:16px;
+    color:var(--coffee-800);
+    font-weight:500;
+  }
+  .gift-list li::before{
+    content:"✓";
+    width:24px;height:24px;
+    background:var(--green);
+    color:#fff;
+    border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    font-size:13px;font-weight:700;
+    flex-shrink:0;
+    margin-top:2px;
+  }
+
+  /* ===== COMPARISON TABLE ===== */
+  .compare{background:var(--coffee-900);color:var(--cream-100);position:relative;overflow:hidden}
+  .compare::before{
+    content:"";position:absolute;inset:0;
+    background:radial-gradient(circle at 30% 20%, rgba(201,169,97,.1), transparent 50%),
+               radial-gradient(circle at 70% 80%, rgba(201,169,97,.06), transparent 50%);
+  }
+  .compare .container{position:relative}
+  .compare h2{color:#fff}
+  .compare .section-title p{color:var(--cream-300)}
+  .table-wrap{
+    background:var(--cream-100);
+    border-radius:24px;
+    padding:8px;
+    box-shadow:var(--shadow-lg);
+    overflow:hidden;
+  }
+  .compare-table{
+    width:100%;
+    border-collapse:separate;
+    border-spacing:0;
+    color:var(--coffee-900);
+    font-size:15px;
+  }
+  .compare-table thead th{
+    padding:24px 16px 20px;
+    text-align:center;
+    font-weight:700;
+    background:transparent;
+    vertical-align:bottom;
+  }
+  .compare-table thead th.brand-topcoffy{
+    background:linear-gradient(180deg,#3d2317,#2a1810);
+    color:#fff;
+    border-radius:18px 18px 0 0;
+    position:relative;
+  }
+  .compare-table thead th.brand-topcoffy::before{
+    content:"MIGLIORE SCELTA";
+    position:absolute;top:-12px;left:50%;
+    transform:translateX(-50%);
+    background:var(--gold);
+    color:var(--coffee-900);
+    font-size:11px;
+    font-weight:800;
+    padding:5px 12px;
+    border-radius:999px;
+    letter-spacing:1px;
+    white-space:nowrap;
+  }
+  .brand-name{
+    font-family:'Playfair Display',serif;
+    font-size:22px;
+    font-weight:900;
+    margin-top:8px;
+  }
+  .brand-logo{
+    width:64px;height:64px;
+    margin:0 auto 6px;
+    border-radius:50%;
+    background:#fff;
+    display:flex;align-items:center;justify-content:center;
+    box-shadow:0 4px 12px rgba(0,0,0,.15);
+    overflow:hidden;
+  }
+  .brand-logo img{width:100%;height:100%;object-fit:cover}
+  .brand-other .brand-logo{background:#f5f5f5}
+  .compare-table tbody td{
+    padding:18px 16px;
+    text-align:center;
+    border-top:1px solid var(--cream-300);
+    font-weight:600;
+  }
+  .compare-table tbody tr td:first-child{
+    text-align:left;
+    color:var(--coffee-700);
+    font-weight:700;
+    font-size:13px;
+    text-transform:uppercase;
+    letter-spacing:.8px;
+    background:var(--cream-200);
+    padding-left:24px;
+  }
+  .compare-table tbody td.col-topcoffy{
+    background:rgba(201,169,97,.08);
+    color:var(--green);
+    font-weight:800;
+    border-left:2px solid var(--gold);
+    border-right:2px solid var(--gold);
+  }
+  .compare-table tbody tr:last-child td.col-topcoffy{
+    border-bottom:2px solid var(--gold);
+    border-radius:0 0 18px 18px;
+  }
+  .v-yes{color:var(--green);font-weight:800}
+  .v-no{color:var(--red);font-weight:800}
+  .v-warn{color:#d68910;font-weight:700}
+  .compare-foot{
+    text-align:center;
+    margin-top:32px;
+    color:var(--cream-300);
+    font-size:14px;
+  }
+
+  /* ===== BONUS SECTION ===== */
+  .bonus{
+    background:linear-gradient(135deg,var(--gold) 0%,#e2c178 100%);
+    text-align:center;
+    padding:70px 0;
+    position:relative;
+    overflow:hidden;
+  }
+  .bonus::before,.bonus::after{
+    content:"";position:absolute;
+    width:300px;height:300px;
+    border-radius:50%;
+    background:rgba(255,255,255,.12);
+  }
+  .bonus::before{top:-100px;left:-80px}
+  .bonus::after{bottom:-120px;right:-90px}
+  .bonus .container{position:relative}
+  .bonus .eyebrow{
+    color:var(--coffee-900);font-weight:800;
+    font-size:13px;letter-spacing:2px;text-transform:uppercase;
+    margin-bottom:14px;
+  }
+  .bonus h2{font-size:clamp(30px,4vw,44px);color:var(--coffee-900);margin-bottom:14px}
+  .bonus p{font-size:18px;color:var(--coffee-800);max-width:620px;margin:0 auto}
+  .bonus .value{
+    display:inline-block;
+    margin-top:20px;
+    background:var(--coffee-900);
+    color:var(--gold);
+    font-family:'Playfair Display',serif;
+    font-weight:900;
+    font-size:32px;
+    padding:10px 28px;
+    border-radius:14px;
+  }
+
+  /* ===== GALLERY STRIP ===== */
+  .gallery{padding:70px 0;background:var(--cream-100)}
+  .gallery-grid{
+    display:grid;
+    grid-template-columns:1.4fr 1fr 1fr;
+    gap:16px;
+    height:380px;
+  }
+  .gallery-grid .g{
+    border-radius:18px;
+    overflow:hidden;
+    box-shadow:var(--shadow-sm);
+    position:relative;
+  }
+  .gallery-grid .g img{width:100%;height:100%;object-fit:cover}
+  .gallery-grid .g:first-child{grid-row:1/3}
+
+  /* ===== FINAL CTA ===== */
+  .final-cta{
+    background:
+      linear-gradient(135deg,rgba(42,24,16,.92),rgba(91,58,37,.85)),
+      url('WhatsApp%20Image%202026-04-15%20at%2012.45.02.jpeg') center/cover;
+    color:#fff;
+    text-align:center;
+    padding:110px 0;
+  }
+  .final-cta h2{color:#fff;font-size:clamp(32px,5vw,52px);margin-bottom:18px}
+  .final-cta p{font-size:19px;color:var(--cream-200);max-width:640px;margin:0 auto 40px}
+  .final-cta .phone{
+    font-family:'Playfair Display',serif;
+    font-weight:900;
+    font-size:36px;
+    color:var(--gold);
+    margin-top:24px;
+    letter-spacing:2px;
+  }
+
+  /* ===== FOOTER ===== */
+  footer{
+    background:var(--coffee-900);
+    color:var(--cream-300);
+    padding:40px 0 30px;
+    text-align:center;
+    font-size:14px;
+  }
+  footer .footer-logo{font-family:'Playfair Display',serif;font-weight:900;font-size:22px;color:var(--gold);margin-bottom:8px}
+  footer a{color:var(--cream-200);text-decoration:none}
+  footer a:hover{color:var(--gold)}
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 900px){
+    section{padding:60px 0}
+    .hero{padding:50px 0 70px}
+    .hero-grid{grid-template-columns:1fr;gap:36px}
+    .hero-image{order:-1}
+    .gift-grid{grid-template-columns:1fr;gap:36px}
+    .benefits-grid{grid-template-columns:1fr 1fr;gap:14px}
+    .gallery-grid{grid-template-columns:1fr 1fr;height:auto;grid-auto-rows:200px}
+    .gallery-grid .g:first-child{grid-row:auto;grid-column:1/3;height:240px}
+    .compare-table{font-size:12.5px}
+    .compare-table thead th{padding:18px 8px}
+    .compare-table tbody td{padding:14px 8px}
+    .compare-table tbody tr td:first-child{font-size:11px;padding-left:12px}
+    .brand-name{font-size:16px}
+    .brand-logo{width:48px;height:48px}
+    .nav-cta span{display:none}
+    .float-badge{display:none}
+    .final-cta .phone{font-size:26px}
+  }
+  @media (max-width: 540px){
+    .benefits-grid{grid-template-columns:1fr}
+    .gallery-grid{grid-template-columns:1fr}
+    .gallery-grid .g:first-child{grid-column:auto;height:220px}
+    .gallery-grid{height:auto}
+    .nav-logo .brand{display:none}
+  }
+
+  /* small fadeIn */
+  @keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+  .hero-grid > *{animation:fadeUp .8s ease both}
+  .hero-grid > *:nth-child(2){animation-delay:.15s}
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  ☕ <strong>Offerta riservata</strong> alle prime <strong>20 famiglie</strong> della zona — Macchinetta in regalo
+</div>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="container nav-inner">
+    <a href="#" class="nav-logo">
+      <img src="WhatsApp%20Image%202026-04-15%20at%2012.44.07%20%285%29.jpeg" alt="TopCoffy logo" />
+      <span class="brand">TopCoffy</span>
+    </a>
+    <a class="nav-cta" href="https://wa.me/393515847394?text=Ciao!%20Vorrei%20la%20degustazione%20gratuita%20TopCoffy" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.599 5.351l-.999 3.648 3.889-1.697zM17.367 14.43c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.149-.173.198-.297.297-.495.099-.198.05-.371-.025-.521-.074-.149-.669-1.611-.916-2.206-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.521.074-.794.371-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.077 4.487.71.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/></svg>
+      <span>Degustazione gratis</span>
+    </a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="container hero-grid">
+    <div>
+      <span class="hero-badge">★ Caffè artigianale · Made in Italy</span>
+      <h1>Il caffè dei <em>baristi</em>, ora a casa tua. <br/>Macchinetta <em>in regalo.</em></h1>
+      <p class="lead">Capsule artigianali da <strong>8 grammi</strong>, miscele italiane premium. Ti consegniamo tutto a casa: caffè, macchina, assistenza. Senza vincoli, senza pensieri.</p>
+
+      <div class="hero-pills">
+        <span class="hero-pill">Capsule 8g</span>
+        <span class="hero-pill">Garanzia illimitata</span>
+        <span class="hero-pill">Consegne gratis</span>
+        <span class="hero-pill">Decalcificazione gratis</span>
+        <span class="hero-pill">Nessun vincolo</span>
+      </div>
+
+      <div class="hero-cta-row">
+        <a class="btn-primary" href="https://wa.me/393515847394?text=Ciao!%20Vorrei%20la%20degustazione%20gratuita%20TopCoffy" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.599 5.351l-.999 3.648 3.889-1.697z"/></svg>
+          Prenota la degustazione gratuita
+        </a>
+        <a class="btn-ghost" href="#offerta">Scopri l'offerta ↓</a>
+      </div>
+    </div>
+
+    <div class="hero-image">
+      <img src="WhatsApp%20Image%202026-04-15%20at%2012.44.08.jpeg" alt="Macchinetta TopCoffy con espresso" />
+      <div class="float-badge fb1">
+        <span class="num">8g</span>
+        <span>capsula<br/>premium</span>
+      </div>
+      <div class="float-badge fb2">
+        <span class="num">∞</span>
+        <span>garanzia<br/>illimitata</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- URGENCY -->
+<div class="urgency">
+  ⚡ Offerta riservata SOLO alle prime <span class="num">20</span> famiglie della zona
+</div>
+
+<!-- BENEFITS -->
+<section class="benefits" id="offerta">
+  <div class="container">
+    <div class="section-title">
+      <div class="eyebrow">Cosa è incluso</div>
+      <h2>Tutto compreso. <em style="color:var(--gold-dark);font-style:normal">Davvero.</em></h2>
+      <p>Non paghi macchina, non paghi assistenza, non paghi spedizioni. Paghi solo il caffè che bevi — al miglior prezzo del mercato.</p>
+    </div>
+
+    <div class="benefits-grid">
+      <div class="benefit">
+        <div class="icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2v6a6 6 0 0012 0V2M6 22h12"/><path d="M9 8c0 1.5 1 3 3 3s3-1.5 3-3"/></svg>
+        </div>
+        <h3>Capsule da 8 grammi</h3>
+        <p>Più caffè per tazza rispetto alla concorrenza. Aroma pieno, crema densa, gusto da bar.</p>
+      </div>
+      <div class="benefit">
+        <div class="icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L4 6v6c0 5 3.5 9.5 8 10 4.5-.5 8-5 8-10V6l-8-4z"/></svg>
+        </div>
+        <h3>Garanzia illimitata</h3>
+        <p>La tua macchina non ha scadenza di garanzia. Se si rompe, la sistemiamo. Sempre.</p>
+      </div>
+      <div class="benefit">
+        <div class="icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M9 13l2 2 4-4"/></svg>
+        </div>
+        <h3>Servizio assistenza gratis</h3>
+        <p>Tecnici a disposizione senza costi nascosti, senza chiamate a pagamento.</p>
+      </div>
+      <div class="benefit">
+        <div class="icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9h13l4 4v4h-2a2 2 0 11-4 0H9a2 2 0 11-4 0H3z"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/></svg>
+        </div>
+        <h3>Consegne a domicilio gratis</h3>
+        <p>Il caffè arriva a casa tua, nei tempi che decidi tu. Niente spese di spedizione.</p>
+      </div>
+      <div class="benefit">
+        <div class="icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4M5 4h14a2 2 0 012 2v12a2 2 0 01-2 2H5a2 2 0 01-2-2V6a2 2 0 012-2z"/></svg>
+        </div>
+        <h3>Nessun vincolo d'acquisto</h3>
+        <p>Compri quanto vuoi, quando vuoi. Niente quote minime mensili, niente fidelizzazioni forzate.</p>
+      </div>
+      <div class="benefit">
+        <div class="icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8 6 6 9 6 13a6 6 0 0012 0c0-4-2-7-6-11z"/></svg>
+        </div>
+        <h3>Decalcificazione gratuita</h3>
+        <p>Manteniamo la tua macchina in perfetto stato — la decalcificazione è inclusa nel servizio.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MACCHINETTA REGALO -->
+<section class="gift">
+  <div class="container gift-grid">
+    <div class="gift-image">
+      <img src="WhatsApp%20Image%202026-04-15%20at%2012.44.07%20%284%29.jpeg" alt="Macchinetta TopCoffy in cucina" />
+      <div class="price-tag">
+        <span class="strike">€129</span>
+        <span class="free">GRATIS</span>
+        <span class="sub">IN REGALO</span>
+      </div>
+    </div>
+    <div class="gift-content">
+      <div class="eyebrow">In omaggio</div>
+      <h2>Una macchinetta bella, piccola e <em style="color:var(--gold-dark);font-style:normal">silenziosa.</em></h2>
+      <p>Design elegante, pronta in 25 secondi, occupa pochissimo spazio in cucina. Te la portiamo, te la installiamo, e resta tua.</p>
+      <ul class="gift-list">
+        <li>Estrazione professionale a 19 bar</li>
+        <li>Consegna e attivazione incluse</li>
+        <li>Compatibile solo con capsule TopCoffy 8g</li>
+        <li>Garanzia illimitata sul corpo macchina</li>
+      </ul>
+      <a class="btn-primary" href="https://wa.me/393515847394?text=Ciao!%20Voglio%20la%20macchinetta%20in%20regalo%20TopCoffy" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.599 5.351l-.999 3.648 3.889-1.697z"/></svg>
+        Voglio la mia in regalo
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- COMPARISON -->
+<section class="compare">
+  <div class="container">
+    <div class="section-title">
+      <div class="eyebrow" style="color:var(--gold)">Confronto onesto</div>
+      <h2>Perché TopCoffy <em style="color:var(--gold);font-style:normal">vince sempre.</em></h2>
+      <p>Stesso caffè, stesso comfort. Ma a parità di servizio, qui paghi solo il caffè.</p>
+    </div>
+
+    <div class="table-wrap">
+      <table class="compare-table" aria-label="Confronto TopCoffy vs Nespresso vs Lavazza">
+        <thead>
+          <tr>
+            <th></th>
+            <th class="brand-other">
+              <div class="brand-logo" style="background:#000;color:#fff;font-family:'Playfair Display',serif;font-weight:900;font-size:22px">N</div>
+              <div class="brand-name" style="color:var(--coffee-900)">Nespresso</div>
+            </th>
+            <th class="brand-other">
+              <div class="brand-logo" style="background:#003a8c;color:#fff;font-weight:900;font-size:14px;letter-spacing:.5px">LAVAZZA</div>
+              <div class="brand-name" style="color:var(--coffee-900)">Lavazza</div>
+            </th>
+            <th class="brand-topcoffy">
+              <div class="brand-logo"><img src="WhatsApp%20Image%202026-04-15%20at%2012.44.07%20%285%29.jpeg" alt="TopCoffy" /></div>
+              <div class="brand-name">TopCoffy</div>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Costo macchinetta</td>
+            <td><span class="v-no">129,00 €</span></td>
+            <td><span class="v-yes">Gratis</span></td>
+            <td class="col-topcoffy"><span class="v-yes">Gratis</span></td>
+          </tr>
+          <tr>
+            <td>Costo a caffè</td>
+            <td><span class="v-no">40 / 50 cent.</span></td>
+            <td><span class="v-yes">30 / 40 cent.</span></td>
+            <td class="col-topcoffy"><span class="v-yes">30 / 40 cent.</span></td>
+          </tr>
+          <tr>
+            <td>Grammi caffè</td>
+            <td><span class="v-no">5 g</span></td>
+            <td><span class="v-warn">7 g</span></td>
+            <td class="col-topcoffy"><span class="v-yes">8 g</span></td>
+          </tr>
+          <tr>
+            <td>Termoformatura</td>
+            <td><span class="v-yes">Sì</span></td>
+            <td><span class="v-no">No</span></td>
+            <td class="col-topcoffy"><span class="v-yes">Sì</span></td>
+          </tr>
+          <tr>
+            <td>Garanzia</td>
+            <td><span class="v-no">2 anni</span></td>
+            <td><span class="v-yes">Illimitata</span></td>
+            <td class="col-topcoffy"><span class="v-yes">Illimitata</span></td>
+          </tr>
+          <tr>
+            <td>Servizio assistenza</td>
+            <td><span class="v-no">No</span></td>
+            <td><span class="v-no">A pagamento</span></td>
+            <td class="col-topcoffy"><span class="v-yes">Gratis</span></td>
+          </tr>
+          <tr>
+            <td>Approvvigionamento</td>
+            <td><span class="v-no">No domicilio</span></td>
+            <td><span class="v-warn">Domicilio + spese</span></td>
+            <td class="col-topcoffy"><span class="v-yes">Domicilio gratis</span></td>
+          </tr>
+          <tr>
+            <td>Obbligo di acquisti</td>
+            <td><span class="v-yes">No</span></td>
+            <td><span class="v-no">500 / 2.000 €</span></td>
+            <td class="col-topcoffy"><span class="v-yes">No</span></td>
+          </tr>
+          <tr>
+            <td>Decalcificazione</td>
+            <td><span class="v-no">No</span></td>
+            <td><span class="v-no">No</span></td>
+            <td class="col-topcoffy"><span class="v-yes">Gratis</span></td>
+          </tr>
+          <tr>
+            <td>Regalo</td>
+            <td><span class="v-no">No</span></td>
+            <td><span class="v-no">No</span></td>
+            <td class="col-topcoffy"><span class="v-yes">Buono 1.000 €</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="compare-foot">Dati confronto al prezzo di listino pubblico delle rispettive marche.</div>
+  </div>
+</section>
+
+<!-- BONUS BARCELLONA -->
+<section class="bonus">
+  <div class="container">
+    <div class="eyebrow">★ Bonus esclusivo prime 20 famiglie ★</div>
+    <h2>In più, un buono viaggio per Barcellona.</h2>
+    <p>Per le prime 20 famiglie che attivano l'abbonamento TopCoffy, regaliamo un buono viaggio del valore di 1.000 €. Caffè, macchina e vacanza: tutto incluso.</p>
+    <div class="value">Valore: 1.000 €</div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery">
+  <div class="container">
+    <div class="section-title">
+      <div class="eyebrow">La nostra qualità</div>
+      <h2>Capsule artigianali. <em style="color:var(--gold-dark);font-style:normal">Espresso italiano.</em></h2>
+    </div>
+    <div class="gallery-grid">
+      <div class="g"><img src="WhatsApp%20Image%202026-04-15%20at%2012.45.02.jpeg" alt="Capsule TopCoffy Espresso Italiano" /></div>
+      <div class="g"><img src="WhatsApp%20Image%202026-04-15%20at%2012.44.08.jpeg" alt="Macchinetta TopCoffy" /></div>
+      <div class="g"><img src="WhatsApp%20Image%202026-04-15%20at%2012.44.07%20%284%29.jpeg" alt="TopCoffy in cucina" /></div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta">
+  <div class="container">
+    <h2>Chiedi la tua degustazione <em style="color:var(--gold);font-style:normal">gratuita.</em></h2>
+    <p>Scrivici su WhatsApp: ti raccontiamo l'offerta in 2 minuti e ti fissiamo la prova del caffè a casa tua. Senza impegno, senza venditori al telefono.</p>
+    <a class="btn-primary" href="https://wa.me/393515847394?text=Ciao!%20Vorrei%20la%20degustazione%20gratuita%20TopCoffy" target="_blank" rel="noopener" style="font-size:18px;padding:22px 40px">
+      <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.599 5.351l-.999 3.648 3.889-1.697z"/></svg>
+      Scrivici su WhatsApp
+    </a>
+    <div class="phone">351 584 7394</div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-logo">TopCoffy</div>
+    <p>Caffè artigianale Made in Italy · Provincia di Bergamo</p>
+    <p style="margin-top:12px"><a href="https://wa.me/393515847394">WhatsApp 351 584 7394</a></p>
+    <p style="margin-top:18px;opacity:.6;font-size:12px">© <span id="y"></span> TopCoffy. Tutti i diritti riservati.</p>
+  </div>
+</footer>
+
+<script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+
+</body>
+</html>
