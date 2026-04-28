@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<title>TopCoffy — Ads 1080×1080 #3</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&family=Playfair+Display:ital,wght@0,700;0,900;1,700&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{background:#1a0e08}
+  body{display:flex;align-items:center;justify-content:center;min-height:100vh;font-family:'Inter',sans-serif}
+  .canvas{
+    width:1080px;height:1080px;position:relative;overflow:hidden;
+    background:linear-gradient(135deg,#c9a961 0%, #a88a47 50%, #8a6f38 100%);
+    color:#2a1810;
+  }
+  .canvas::before{
+    content:"";position:absolute;inset:0;
+    background-image:
+      radial-gradient(circle at 25% 20%, rgba(255,255,255,.15), transparent 40%),
+      radial-gradient(circle at 80% 90%, rgba(42,24,16,.25), transparent 50%);
+  }
+  .canvas::after{
+    content:"";position:absolute;top:-100px;left:-100px;right:-100px;bottom:-100px;
+    background-image:
+      repeating-linear-gradient(35deg, transparent 0 60px, rgba(255,255,255,.04) 60px 62px);
+    pointer-events:none;
+  }
+  .frame{position:absolute;inset:32px;border:3px solid #2a1810;border-radius:20px;pointer-events:none}
+  .corners{position:absolute;inset:32px;pointer-events:none}
+  .corners span{position:absolute;width:60px;height:60px;border:3px solid #faf5ec}
+  .corners span:nth-child(1){top:-3px;left:-3px;border-right:none;border-bottom:none}
+  .corners span:nth-child(2){top:-3px;right:-3px;border-left:none;border-bottom:none}
+  .corners span:nth-child(3){bottom:-3px;left:-3px;border-right:none;border-top:none}
+  .corners span:nth-child(4){bottom:-3px;right:-3px;border-left:none;border-top:none}
+  .header{position:absolute;top:90px;left:0;right:0;text-align:center}
+  .header .stamp{display:inline-flex;align-items:center;gap:14px;background:#2a1810;color:#faf5ec;padding:14px 32px;border-radius:60px;border:2px solid #faf5ec}
+  .header .stamp .logo{width:46px;height:46px;border-radius:50%;background:#faf5ec;padding:4px}
+  .header .stamp .logo img{width:100%;height:100%;object-fit:contain;border-radius:50%}
+  .header .stamp .name{font-family:'Playfair Display',serif;font-size:24px;font-weight:700;font-style:italic}
+  .urgency{position:absolute;top:200px;left:0;right:0;text-align:center}
+  .urgency .label{display:inline-block;background:#c0392b;color:#faf5ec;padding:10px 26px;border-radius:8px;font-size:14px;font-weight:900;letter-spacing:4px;text-transform:uppercase;box-shadow:0 8px 24px rgba(192,57,43,.4);transform:rotate(-2deg)}
+  .main{position:absolute;top:280px;left:0;right:0;text-align:center}
+  .eyebrow{font-size:18px;font-weight:700;letter-spacing:6px;color:#2a1810;text-transform:uppercase;opacity:.7;margin-bottom:14px}
+  .price{font-family:'Playfair Display',serif;font-size:240px;font-weight:900;line-height:.85;color:#2a1810;letter-spacing:-4px;text-shadow:0 8px 0 rgba(255,255,255,.2)}
+  .price .euro{font-size:120px;vertical-align:top;font-style:italic;color:#faf5ec;-webkit-text-stroke:3px #2a1810}
+  .label-bonus{font-family:'Playfair Display',serif;font-size:54px;font-weight:700;font-style:italic;color:#2a1810;margin-top:6px;letter-spacing:-1px}
+  .label-bonus span{color:#faf5ec;-webkit-text-stroke:2px #2a1810}
+  .destination{position:absolute;bottom:280px;left:0;right:0;text-align:center}
+  .destination .city{font-family:'Playfair Display',serif;font-size:90px;font-weight:900;color:#faf5ec;letter-spacing:-1px;text-shadow:0 6px 0 #2a1810, 0 12px 30px rgba(42,24,16,.3)}
+  .destination .desc{font-size:20px;font-weight:600;color:#2a1810;margin-top:8px;max-width:680px;margin-left:auto;margin-right:auto;line-height:1.4}
+  .cta-row{position:absolute;bottom:130px;left:0;right:0;text-align:center}
+  .cta-row .pill{display:inline-block;background:#2a1810;color:#c9a961;padding:24px 48px;border-radius:60px;font-weight:900;font-size:22px;letter-spacing:1px;box-shadow:0 14px 36px rgba(42,24,16,.4);border:2px solid #faf5ec}
+  .footer{position:absolute;bottom:60px;left:0;right:0;text-align:center;font-size:12px;letter-spacing:4px;opacity:.65;text-transform:uppercase;font-weight:700;color:#2a1810}
+</style>
+</head>
+<body>
+  <div class="canvas">
+    <div class="frame"></div>
+    <div class="corners"><span></span><span></span><span></span><span></span></div>
+    <div class="header">
+      <div class="stamp">
+        <div class="logo"><img src="../WhatsApp%20Image%202026-04-15%20at%2012.44.07%20%285%29.jpeg" alt=""></div>
+        <div class="name">TopCoffy</div>
+      </div>
+    </div>
+    <div class="urgency"><div class="label">Solo prime 20 famiglie</div></div>
+    <div class="main">
+      <div class="eyebrow">In regalo per te</div>
+      <div class="price"><span class="euro">€</span>1.000</div>
+      <div class="label-bonus">bonus <span>viaggio</span></div>
+    </div>
+    <div class="destination">
+      <div class="city">BARCELLONA</div>
+      <div class="desc">Prenota la tua degustazione gratuita: con la tua macchina TopCoffy ricevi un voucher viaggio da spendere come vuoi.</div>
+    </div>
+    <div class="cta-row"><div class="pill">RICHIEDI IL TUO BONUS →</div></div>
+    <div class="footer">topcoffy.it · offerta a esaurimento posti</div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<title>TopCoffy — Ads 1080×1080 #1</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&family=Playfair+Display:ital,wght@0,700;0,900;1,700&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{background:#1a0e08}
+  body{display:flex;align-items:center;justify-content:center;min-height:100vh;font-family:'Inter',sans-serif}
+  .canvas{
+    width:1080px;height:1080px;position:relative;overflow:hidden;
+    background:
+      radial-gradient(ellipse at top right, rgba(201,169,97,.18), transparent 55%),
+      radial-gradient(ellipse at bottom left, rgba(201,169,97,.10), transparent 60%),
+      linear-gradient(160deg, #2a1810 0%, #3d2317 60%, #2a1810 100%);
+    color:#faf5ec;
+  }
+  .canvas::before{
+    content:"";position:absolute;inset:0;
+    background-image:
+      radial-gradient(circle at 20% 30%, rgba(255,255,255,.04) 0, transparent 2px),
+      radial-gradient(circle at 80% 70%, rgba(255,255,255,.03) 0, transparent 2px);
+    background-size:40px 40px;opacity:.6;
+  }
+  .frame{position:absolute;inset:32px;border:2px solid rgba(201,169,97,.45);border-radius:20px;pointer-events:none}
+  .badge{
+    position:absolute;top:90px;right:90px;
+    width:200px;height:200px;border-radius:50%;
+    background:linear-gradient(140deg,#c9a961,#a88a47);
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    box-shadow:0 20px 50px rgba(0,0,0,.4), inset 0 -8px 20px rgba(0,0,0,.2);
+    transform:rotate(-12deg);
+    border:4px solid #faf5ec;
+  }
+  .badge .small{font-size:18px;font-weight:700;letter-spacing:3px;color:#2a1810;text-transform:uppercase}
+  .badge .big{font-family:'Playfair Display',serif;font-size:62px;font-weight:900;color:#2a1810;line-height:.95;font-style:italic;text-shadow:0 2px 0 rgba(255,255,255,.3)}
+  .badge .tag{font-size:13px;font-weight:700;letter-spacing:2px;color:#2a1810;margin-top:4px}
+  .header{position:absolute;top:80px;left:90px;display:flex;align-items:center;gap:18px}
+  .header .logo{width:80px;height:80px;border-radius:50%;background:#faf5ec;padding:6px;box-shadow:0 8px 24px rgba(0,0,0,.3)}
+  .header .logo img{width:100%;height:100%;object-fit:contain;border-radius:50%}
+  .header .name{font-family:'Playfair Display',serif;font-size:32px;font-weight:700;font-style:italic;letter-spacing:1px}
+  .header .tagline{font-size:11px;font-weight:600;letter-spacing:3px;opacity:.7;text-transform:uppercase;margin-top:2px}
+  .content{position:absolute;left:90px;right:90px;top:330px}
+  .eyebrow{font-size:14px;font-weight:700;letter-spacing:5px;color:#c9a961;text-transform:uppercase;margin-bottom:18px}
+  h1{font-family:'Playfair Display',serif;font-size:108px;font-weight:900;line-height:.95;letter-spacing:-1px}
+  h1 em{font-style:italic;color:#c9a961;font-weight:700}
+  .sub{font-size:24px;font-weight:400;line-height:1.4;margin-top:28px;max-width:620px;opacity:.92}
+  .sub b{color:#c9a961;font-weight:700}
+  .photo{
+    position:absolute;bottom:-40px;right:-40px;width:560px;height:560px;
+    background-image:url('../WhatsApp%20Image%202026-04-15%20at%2012.44.08.jpeg');
+    background-size:cover;background-position:center;
+    border-radius:50% 0 0 0;
+    box-shadow:-20px -20px 60px rgba(0,0,0,.5);
+    transform:rotate(-2deg);
+  }
+  .photo::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at center,transparent 50%, rgba(26,14,8,.4) 100%);border-radius:50% 0 0 0}
+  .cta{position:absolute;bottom:90px;left:90px;display:flex;align-items:center;gap:16px}
+  .cta .pill{
+    background:linear-gradient(135deg,#c9a961,#a88a47);
+    color:#2a1810;padding:22px 40px;border-radius:60px;
+    font-weight:900;font-size:22px;letter-spacing:.5px;
+    box-shadow:0 12px 30px rgba(201,169,97,.4);
+  }
+  .cta .arrow{font-size:38px;color:#c9a961}
+  .footer{position:absolute;bottom:42px;right:90px;font-size:13px;letter-spacing:3px;opacity:.55;text-transform:uppercase;font-weight:600}
+</style>
+</head>
+<body>
+  <div class="canvas">
+    <div class="frame"></div>
+    <div class="header">
+      <div class="logo"><img src="../WhatsApp%20Image%202026-04-15%20at%2012.44.07%20%285%29.jpeg" alt=""></div>
+      <div>
+        <div class="name">TopCoffy</div>
+        <div class="tagline">Made in Italy</div>
+      </div>
+    </div>
+    <div class="badge">
+      <span class="small">Solo</span>
+      <span class="big">GRATIS</span>
+      <span class="tag">in regalo</span>
+    </div>
+    <div class="content">
+      <div class="eyebrow">★ Offerta esclusiva ★</div>
+      <h1>La macchina<br>del caffè <em>in regalo</em></h1>
+      <p class="sub">Capsule artigianali da <b>8g</b>, garanzia illimitata, consegna a domicilio gratuita. <b>Zero vincoli d'acquisto.</b></p>
+    </div>
+    <div class="photo"></div>
+    <div class="cta">
+      <div class="pill">PRENOTA LA DEGUSTAZIONE</div>
+      <div class="arrow">→</div>
+    </div>
+    <div class="footer">topcoffy.it</div>
+  </div>
+</body>
+</html>
